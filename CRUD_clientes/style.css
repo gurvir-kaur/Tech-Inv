@@ -1,0 +1,30 @@
+.d-flex {
+    margin-left: 6em;
+}
+
+.d-flex input {
+    margin: 0.9em 0em;
+}
+
+.d-flex button {
+    margin: 1.5em .6em;
+    padding: 0.3em 2.4em;
+}
+
+table .btnedit {
+    color: green;
+    cursor: pointer;
+}
+
+table .btndelete {
+    color: red;
+    cursor: pointer;
+}
+
+.container i {
+    margin: .5em;
+}
+
+div.container a:hover {
+    color: #ffc107 !important;
+}
