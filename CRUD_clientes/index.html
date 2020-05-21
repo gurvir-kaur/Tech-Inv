@@ -14,17 +14,17 @@
 
 </head>
 
-<body>
+<body class="container text-center bg-light">
 
-    <div class="container text-center bg-info" class=" py-4 text-info" style="padding: 1em">
+    <div class="container text-center bg-secondary" class=" py-4 text-info" style="padding: 1em">
 
         <h1 class=" py-4 text-white"><i class="fas fa-users"></i> Clientes</h1>
 
-        <a class="px-4 text-white" href="home.html"><i class="fas fa-home"></i>Home</a>
+        <a class="px-4 text-white" href=""><i class="fas fa-home"></i>Home</a>
 
-        <a class="px-4 text-white" href="facturacion.html"><i class="fas fa-file-invoice"></i>Billing</a>
+        <a class="px-4 text-white" href="../billing/index.html"><i class="fas fa-file-invoice"></i>Billing</a>
 
-        <a class="px-4 text-white" href="facturacion.html"><i class="fas fa-box-open"></i>Productos</a>
+        <a class="px-4 text-white" href="../CRUD_productos/index.html"><i class="fas fa-box-open"></i>Productos</a>
 
     </div>
 
@@ -32,19 +32,19 @@
         <!--Product Form-->
         <form class="w-50">
             <!--Product ID and Name-->
-            <input type="text" id="productID" class="form-control" readonly placeholder="ID">
-            <input type="text" id="productName" class="form-control" placeholder="Product Name">
+            <input type="text" id="clientid" class="form-control" readonly placeholder="ID">
             <!--Seperation to devide rows-->
             <div class="row">
                 <!--Product category-->
                 <div class="col">
-                    <input type="text" id="category" class="form-control m-0" placeholder="Category">
+                    <input type="text" id="name" class="form-control m-0" placeholder="Name">
                 </div>
                 <!--Product Price-->
                 <div class="col">
-                    <input type="text" id="price" class="form-control m-0" placeholder="Price">
+                    <input type="text" id="surname" class="form-control m-0" placeholder="Surname">
                 </div>
             </div>
+            <input type="text" id="address" class="form-control" placeholder="Address">
         </form>
     </div>
 
@@ -57,12 +57,12 @@
 
     <div class="container">
         <table class="table table-hover">
-            <thead class="thead-dark">
+            <thead class="bg-info">
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Price</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Address</th>
                     <th scope="col">Edit</th>
                     <th scope="col">Delete</th>
                 </tr>

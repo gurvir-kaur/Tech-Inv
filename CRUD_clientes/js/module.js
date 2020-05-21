@@ -3,7 +3,7 @@
  * @param {String} dbname , Database's name
  * @param {table} table , table object
  */
-function productsdb(dbname, table) {
+function clientsdb(dbname, table) {
     const db = new Dexie(dbname);
     db.version(1).stores(table);
     db.open();
@@ -18,7 +18,7 @@ function bulkcreate(dbtable, data) {
         dbtable.bulkAdd([data]);
         console.log("Object inserted");
     } else {
-        console.log("Please provide data...")
+        console.log("Please provide details...")
     }
     return flag;
 };
@@ -101,7 +101,7 @@ const createElement = (tagname, appendTo, fn) => {
     if (fn) fn(element);
 };
 
-export default productsdb;
+export default clientsdb;
 export {
     bulkcreate,
     getData,

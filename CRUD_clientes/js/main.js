@@ -1,4 +1,4 @@
-import productdb, {
+import clientsdb, {
     bulkcreate,
     getData,
     createElement,
@@ -8,28 +8,28 @@ import productdb, {
 
 //window onload event
 window.onload = () => {
-    textID(productid);
+    textID(clientid);
 
 }
 
 function textID(textboxid) {
-    getData(db.products, data => {
+    getData(db.clients, data => {
         textboxid.value = data.id + 1 || 1;
     })
     table();
 }
 
-let db = productdb("Productdb", {
-    products: '++id, name, category, price'
+let db = clientsdb("Clientsdb", {
+    clients: '++id, name, surname, address'
 });
 
 const noDataFound = document.getElementById("notfound");
 
 // input tags
-const productid = document.getElementById("productID");
-const productName = document.getElementById("productName");
-const category = document.getElementById("category");
-const price = document.getElementById("price");
+const clientid = document.getElementById("clientid");
+const name = document.getElementById("name");
+const surname = document.getElementById("surname");
+const address = document.getElementById("address");
 
 // creating buttons -- create, update and delete
 const btncreate = document.getElementById("btn-create");
@@ -39,29 +39,29 @@ const btndelete = document.getElementById("btn-delete");
 // event listerner for create button
 btncreate.onclick = (event) => {
     // insert values
-    let flag = bulkcreate(db.products, {
-        name: productName.value,
-        category: category.value,
-        price: price.value
+    let flag = bulkcreate(db.clients, {
+        name: name.value,
+        surname: surname.value,
+        address: address.value
     });
     // reset textbox values
-    productName.value = category.value = price.value = "";
+    name.value = surname.value = address.value = "";
 
-    getData(db.products, (data) => {
-        productid.value = data.id + 1 || 1;
+    getData(db.clients, (data) => {
+        clientid.value = data.id + 1 || 1;
     });
 
     table();
 };
 
 btnupdate.onclick = () => {
-    const id = parseInt(productid.value || 0);
+    const id = parseInt(clientid.value || 0);
     if (id) {
         // call dexie update method
-        db.products.update(id, {
-            name: productName.value,
-            category: category.value,
-            price: price.value
+        db.clients.update(id, {
+            name: name.value,
+            surname: surname.value,
+            address: address.value
         }).then((updated) => {
             let get = updated ? `data updated` : `couldn't update data`;
             table();
@@ -81,8 +81,8 @@ btnupdate.onclick = () => {
 // delete all
 btndelete.onclick = () => {
     db.delete();
-    db = productdb("Productdb", {
-        products: '++id, name, category, price'
+    db = clientsdb("Clientsdb", {
+        clients: '++id, name, surname, address'
     });
     db.open();
     table();
@@ -100,13 +100,13 @@ function table() {
         tbody.removeChild(tbody.firstChild);
     }
 
-    getData(db.products, (data) => {
+    getData(db.clients, (data) => {
         console.log("yes", data);
         if (data) {
             createElement("tr", tbody, tr => {
                 for (const value in data) {
                     createElement("td", tr, td => {
-                        td.textContent = data.price === data[value] ? `${data[value]}€` : data[value];
+                        td.textContent = data[value];
                     })
                 }
 
@@ -147,16 +147,16 @@ function editbtn(event) {
     db.products.get(id, data => {
         //console.log(data);
 
-        productid.value = data.id || 0;
-        productName.value = data.name || "";
-        category.value = data.category || "";
-        price.value = data.price || "";
+        clientid.value = data.id || 0;
+        name.value = data.name || "";
+        surname.value = data.surname || "";
+        address.value = data.address || "";
     })
 }
 
 function deletebtn() {
     let id = parseInt(event.target.dataset.id);
-    db.products.delete(id);
+    db.clients.delete(id);
     table();
 
 }
