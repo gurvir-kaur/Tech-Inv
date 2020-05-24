@@ -89,7 +89,7 @@ btndelete.onclick = () => {
 }
 
 /**
- * this function is used to create new rows and columns
+ * this function creates new rows and columns
  */
 function table() {
 

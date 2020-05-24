@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+    <title>Login</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -18,16 +18,16 @@
 <body>
     <!--  Logo Image -->
     <div class="d-flex justify-content-center py-4">
-        <img src="images/tech.png" style="width: 200px;" alt="logotipo">
+        <img src="images/logoTransparant.png" style="width: 200px;" alt="logotipo de aplicación">
     </div>
     <div class="container text-center bg-light w-50 p-4">
         <div class="justify-content-center">
             <!-- Text under image-->
             <div class="d-flex justify-content-center">
-                <h5>Sign In - step 2</h5>
+                <h5>Sign In - step 1</h5>
             </div>
             <div class="d-flex justify-content-center">
-                <p>write password to continue to application</p>
+                <p>write username and reference code to continue to application</p>
             </div>
 
             <!-- login form-->
@@ -37,18 +37,33 @@
                         <input type="text" class="form-control" id="user_name" placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <!-- REFERENCE CODE INPUT-->
+                        <input type="text" class="form-control" id="enter_OTP" placeholder="Reference Code">
                     </div>
                     <div class="form-group">
-                        <input type="checkbox" onclick="user.Toggle()"> <b>Show Password</b>
+
+                        <input style="margin-left: 20px;" type="button" id="1" onclick="user.writeCodeNumber('1')">
+                        <input style="margin-left: 20px;" type="button" id="2" onclick="user.writeCodeNumber('2')">
+                        <input style="margin-left: 20px;" type="button" id="3" onclick="user.writeCodeNumber('3')">
+                        <input style="margin-left: 20px;" type="button" id="4" onclick="user.writeCodeNumber('4')">
+
                     </div>
+
                 </form>
+            </div>
+            <div class="container w-50 ">
+                <div class=" m-2">
+                    <button onclick="user.LoginUser()" type="submit" class="btn btn-info btn-block"> Next</button>
+                </div>
             </div>
         </div>
 
     </div>
-    <div class="container w-50 p-4">
-        <button onclick="user.LoginPassword()" type="submit" class="btn btn-info btn-block">Login</button>
+    <div class="container w-50 p-2">
+        <div>
+            <strong>Create account >> </strong>
+            <a href="./register.html"><button type="submit" class="btn btn-danger">Sign Up</button></a>
+        </div>
     </div>
 
     <!-- Optional JavaScript -->

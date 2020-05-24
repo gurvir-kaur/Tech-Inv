@@ -1,3 +1,7 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .invoice {
     margin-bottom: 15px;
     border-top: 1px solid;
@@ -6,6 +10,125 @@
     padding: 0 17px;
 }
 
+#container {
+    width: 80%;
+}
+
 .border {
     border: 1px solid #e5e5e5;
+}
+
+textarea {
+    border: 0;
+    font: 16px Arial, Serif;
+    overflow: hidden;
+    resize: none;
+}
+
+#address {
+    width: 80%;
+    height: 120px;
+    line-height: 1.8em;
+    float: right;
+    text-align: right;
+    font-weight: bolder;
+}
+
+#customer-title {
+    font-weight: bolder;
+    width: 80%;
+    margin-bottom: 2em;
+    float: left;
+}
+
+table td,
+table th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+#items {
+    clear: both;
+    width: 100%;
+    margin-bottom: 2%;
+    border: 1px solid black;
+}
+
+#items th {
+    background: #eee;
+    text-align: center;
+}
+
+#items textarea {
+    width: 80px;
+    height: 50px;
+    text-align: center;
+}
+
+#items tr.item-row td {
+    border: 0;
+    vertical-align: top;
+}
+
+#items td.item-name {
+    width: 175px;
+}
+
+#items td.item-name textarea {
+    width: 100%;
+}
+
+#items td.total-line {
+    border-right: 0;
+    text-align: right;
+}
+
+#items td.total-value {
+    border-left: 0;
+    padding: 10px;
+}
+
+#items td.total-value textarea {
+    height: 20px;
+    background: none;
+}
+
+#items td.blank {
+    border: 0;
+}
+
+textarea:hover,
+textarea:focus,
+#items td.total-value textarea:hover,
+#items td.total-value textarea:focus,
+.delete:hover {
+    background-color: rgb(243, 255, 175);
+}
+
+.delete-wpr {
+    position: relative;
+}
+
+.delete {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    position: absolute;
+    background: #EEEEEE;
+    font-weight: bold;
+    padding: 0px 3px;
+    border: 1px solid;
+    top: -6px;
+    left: -22px;
+    font-size: 12px;
+}
+
+#add {
+    margin-left: 15%;
+    margin-bottom: 5%;
+}
+
+.total {
+    margin: 2%;
+    float: right;
 }
