@@ -1,12 +1,22 @@
+.container i {
+    margin: .5em;
+}
+
+div.container a:hover {
+    color: #ffc107 !important;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#invoice {
+    border: 1px solid black;
+    margin-bottom: 2%;
+}
+
 .invoice {
     margin-bottom: 15px;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    background: lightblue;
     padding: 0 17px;
 }
 

@@ -78,7 +78,7 @@ class clsApplication {
         }
 
         if (pScreen == 'passwordScreen') {
-            this.win.location.href = "password.html";
+            this.win.location.href = "../html/password.html";
         }
 
 
