@@ -26,7 +26,7 @@ class clsApplication {
 
     ////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * Esta función lleva el control de verificación de nombre de usuario. 
+     * THIS FUNCTION VERIFIES THE USERNAME
      */
     LoginUser() {
 
@@ -36,7 +36,10 @@ class clsApplication {
             if (tusername.length > 4) {
                 if (this.GetScreenValue('enter_OTP') > 0) {
                     if (this.Validate_REF_CODE() == true) {
+
+                        //if everything is OK then it navigates to necxt screen
                         this.NavigateTo('passwordScreen');
+
                     } else {
                         this.GenerateScreenErr("Reference Code Wrong!");
                     }
@@ -53,7 +56,7 @@ class clsApplication {
 
     ////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * La función LoginPassword verifica la contraseña.
+     * THIS FUNCTION VERIFIES THE PASSWORD PATTERN
      */
     LoginPassword() {
         var tpassword = this.GetScreenValue('password');
@@ -69,8 +72,8 @@ class clsApplication {
 
     ////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * cambio de ventanas dentro de la aplicación 
-     * @param {pantalla} pScreen 
+     * TO CHANGE THE SCREEN 
+     * @param {screen} pScreen 
      */
     NavigateTo(pScreen) {
         if (pScreen == 'home') {
@@ -81,12 +84,11 @@ class clsApplication {
             this.win.location.href = "../html/password.html";
         }
 
-
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * Validación de código de referencia 
+     * VALIDATES THE REFERENCE CODE 
      */
     Validate_REF_CODE() {
 
@@ -102,7 +104,7 @@ class clsApplication {
 
     ////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * función para crear numeros aleatorios. 
+     * TO CREATE RANDOM NUMBERS 
      */
     ramdom() {
 
@@ -114,7 +116,7 @@ class clsApplication {
 
     ////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * writes the clicked button's value in input
+     * WRITES THE VALUE OF THE BUTTON WHICH IS CLICKED
      * @param {button number} pi 
      */
     writeCodeNumber(pi) {
@@ -124,15 +126,14 @@ class clsApplication {
             tmp = tmp + this.GetScreenValue(pi);
             this.SetScreenValue("enter_OTP", tmp);
         } else {
-            console.log(pi);
             this.SetScreenValue("enter_OTP", this.GetScreenValue(pi));
         }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * recoje el valor ded elemento.
-     * @param {nombre de elemento} pFieldName 
+     * GETS THE VALUE OF THE ELEMENT
+     * @param {element name} pFieldName 
      */
     GetScreenValue(pFieldName) {
         var tS = this.doc.getElementById(pFieldName).value;
@@ -141,9 +142,9 @@ class clsApplication {
 
     ////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * Asigna un nuevo valor al dicho elemento.
-     * @param {nombre de elemento} pFieldName 
-     * @param {valor} pValue 
+     * ASSIGNES NEW VALUE THE SELECTED ELEMENT
+     * @param {element name} pFieldName 
+     * @param {value} pValue 
      */
     SetScreenValue(pFieldName, pValue) {
 
@@ -154,15 +155,17 @@ class clsApplication {
 
     ////////////////////////////////////////////////////////////////////////////////////////
     /**
-     * Genera mensages de error.
-     * @param {mensage} pMessage 
+     * ERROR GENERATOR
+     * @param {message} pMessage 
      */
     GenerateScreenErr(pMessage) {
-        console.log('Error message ' + pMessage);
         alert(pMessage);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * TO HIDE OR SHOW THE PASSWORD
+     */
     Toggle() {
         var temp = document.getElementById("password");
         if (temp.type === "password") {

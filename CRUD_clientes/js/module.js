@@ -11,7 +11,11 @@ function clientsdb(dbname, table) {
     return db;
 }
 
-// insert function
+/**
+ * to insert data
+ * @param {*} dbtable 
+ * @param {*} data 
+ */
 function bulkcreate(dbtable, data) {
     let flag = empty(data);
     if (flag) {
@@ -23,8 +27,10 @@ function bulkcreate(dbtable, data) {
     return flag;
 };
 
-// validation
-
+/**
+ * to validate data
+ * @param {*} object 
+ */
 const empty = object => {
     let flag = false;
 
@@ -58,6 +64,12 @@ const empty = object => {
         }
     });
 };*/
+
+/**
+ * to get data from database
+ * @param {*} dbname 
+ * @param {*} fn 
+ */
 const getData = (dbname, fn) => {
     let index = 0;
     let object = {};

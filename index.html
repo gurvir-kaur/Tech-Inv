@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
+<!--    --  --  --  --  --  LOGIN HTML  --  --  --  --  -->
 
 <head>
-    <!-- Required meta tags -->
+    <!--  meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,16 +11,18 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <!-- my javascript files -->
     <script src="/js/main.js"></script>
     <script src="/js/clsApplication.js"></script>
 
 </head>
 
 <body>
-    <!--  Logo Image -->
+    <!--  Logo Image div-->
     <div class="d-flex justify-content-center py-4">
         <img src="images/logoTransparant.png" style="width: 200px;" alt="logotipo de aplicación">
     </div>
+
     <div class="container text-center bg-light w-50 p-4">
         <div class="justify-content-center">
             <!-- Text under image-->
@@ -34,6 +37,7 @@
             <div class="d-flex justify-content-center">
                 <form class="w-50">
                     <div class="form-group">
+                        <!-- USERNAME INPUT -->
                         <input type="text" class="form-control" id="user_name" placeholder="Username">
                     </div>
                     <div class="form-group">
@@ -41,7 +45,7 @@
                         <input type="text" class="form-control" id="enter_OTP" placeholder="Reference Code">
                     </div>
                     <div class="form-group">
-
+                        <!--BUTTONS WHERE REFERENCE CODE IS GENERATED-->
                         <input style="margin-left: 20px;" type="button" id="1" onclick="user.writeCodeNumber('1')">
                         <input style="margin-left: 20px;" type="button" id="2" onclick="user.writeCodeNumber('2')">
                         <input style="margin-left: 20px;" type="button" id="3" onclick="user.writeCodeNumber('3')">
@@ -53,6 +57,7 @@
             </div>
             <div class="container w-50 ">
                 <div class=" m-2">
+                    <!-- NEXT BUTTON -->
                     <button onclick="user.LoginUser()" type="submit" class="btn btn-info btn-block"> Next</button>
                 </div>
             </div>
@@ -62,6 +67,7 @@
     <div class="container w-50 p-2">
         <div>
             <strong>Create account >> </strong>
+            <!-- LINK TO CREATE NEW ACCOUNT -->
             <a href="../html/register.html"><button type="submit" class="btn btn-danger">Sign Up</button></a>
         </div>
     </div>

@@ -12,6 +12,10 @@ window.onload = () => {
 
 }
 
+/**
+ * to show the ID on the screen
+ * @param {*} textboxid 
+ */
 function textID(textboxid) {
     getData(db.products, data => {
         textboxid.value = data.id + 1 || 1;
@@ -89,7 +93,7 @@ btndelete.onclick = () => {
 }
 
 /**
- * this function creates new rows and columns
+ * to create new rows and columns
  */
 function table() {
 
@@ -101,7 +105,6 @@ function table() {
     }
 
     getData(db.products, (data) => {
-        console.log("yes", data);
         if (data) {
             createElement("tr", tbody, tr => {
                 for (const value in data) {
@@ -141,11 +144,8 @@ function editbtn(event) {
 
     //to find the type of element we can use 
     //here I have used "typeof" to find the type of id element
-    //console.log(typeof id);
-
 
     db.products.get(id, data => {
-        //console.log(data);
 
         productid.value = data.id || 0;
         productName.value = data.name || "";
@@ -154,6 +154,9 @@ function editbtn(event) {
     })
 }
 
+/**
+ * to detele one item
+ */
 function deletebtn() {
     let id = parseInt(event.target.dataset.id);
     db.products.delete(id);

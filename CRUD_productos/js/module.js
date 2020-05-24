@@ -11,20 +11,23 @@ function productsdb(dbname, table) {
     return db;
 }
 
-// insert function
+/**
+ * INSERT FUNCTION
+ * @param {table} dbtable 
+ * @param {data} data 
+ */
 function bulkcreate(dbtable, data) {
     let flag = empty(data);
     if (flag) {
         dbtable.bulkAdd([data]);
-        console.log("Object inserted");
-    } else {
-        console.log("Please provide data...")
-    }
+    } else {}
     return flag;
 };
 
-// validation
-
+/**
+ * to validate
+ * @param {*} object 
+ */
 const empty = object => {
     let flag = false;
 
@@ -58,9 +61,18 @@ const empty = object => {
         }
     });
 };*/
+
+/**
+ * to get data from database
+ * @param {*} dbname 
+ * @param {*} fn 
+ */
 const getData = (dbname, fn) => {
     let index = 0;
+
+    //empty object
     let object = {};
+
     dbname.count(count => {
         // count rows in the table using count method
         if (count) {
@@ -95,6 +107,12 @@ function SortObject(pObject) {
 
 //if a function returns another funtion as a parameter 
 //then this funtion is called higher order function
+/**
+ * to create element 
+ * @param {*} tagname 
+ * @param {*} appendTo 
+ * @param {*} fn 
+ */
 const createElement = (tagname, appendTo, fn) => {
     const element = document.createElement(tagname);
     if (appendTo) appendTo.appendChild(element);

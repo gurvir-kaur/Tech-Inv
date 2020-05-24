@@ -12,6 +12,10 @@ window.onload = () => {
 
 }
 
+/**
+ * showa the id on the screen
+ * @param {*} textboxid 
+ */
 function textID(textboxid) {
     getData(db.clients, data => {
         textboxid.value = data.id + 1 || 1;
@@ -154,6 +158,9 @@ function editbtn(event) {
     })
 }
 
+/**
+ * deletes one item
+ */
 function deletebtn() {
     let id = parseInt(event.target.dataset.id);
     db.clients.delete(id);
